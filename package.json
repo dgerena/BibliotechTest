@@ -4,11 +4,39 @@
   "description": "A coding challenge to assess your ability to navigate an express server implementation.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "coverage": "nyc mocha --recursive --exit && start coverage/index.html",
+    "test": "mocha --recursive --watch"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "config",
+      "datastores",
+      "models",
+      "passport",
+      "routes"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "istanbul": "^0.4.5",
+    "jsend": "^1.0.2",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.3.10",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sha512": "0.0.1",
+    "sinon": "^7.1.1",
+    "supertest": "^3.3.0"
   }
 }
